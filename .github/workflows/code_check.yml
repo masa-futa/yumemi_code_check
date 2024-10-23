@@ -16,10 +16,10 @@ jobs:
         uses: kuhnroyal/flutter-fvm-config-action/setup@v3
 
       - name: Install packages
-        run: fvm flutter pub get
+        run: flutter pub get
 
       - name: Run analysis
-        run: fvm flutter analyze
+        run: flutter analyze
 
   test:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
         uses: kuhnroyal/flutter-fvm-config-action/setup@v3
 
       - name: Install packages
-        run: fvm flutter pub get
+        run: flutter pub get
 
       - name: Run analysis
-        run: fvm flutter test --test-randomize-ordering-seed=random
+        run: flutter test --test-randomize-ordering-seed=random
