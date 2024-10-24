@@ -1,3 +1,4 @@
+name: jwt
 on:
   workflow_dispatch
 
