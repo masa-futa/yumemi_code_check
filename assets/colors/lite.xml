@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lite_primary">#FF65558F</color>
+    <color name="lite_secondary">#FF625B71</color>
+    <color name="lite_surface">#FFFEF7FF</color>
+    <color name="lite_surface_container_high">#FFECE6F0</color>
+    <color name="lite_on_surface_variant">#FF49454F</color>
+    <color name="lite_tertiary">#FF7D5260</color>
+    <color name="lite_outline">#FF79747E</color>
+</resources>
