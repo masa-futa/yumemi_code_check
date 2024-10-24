@@ -61,3 +61,12 @@ class XxxRepository extends Repository {
 
 }
 ```
+
+## Code Generate
+`freezed` / `riverpod`などの自動生成ファイルが乱雑化してしまうため、`build.yaml`を利用し  
+`generated/`フォルダにファイルを生成する様に指定しているため、コード生成時のパス指定に十分注意すること
+
+```dart
+part 'generated/xxx_xxx.freezed.dart';
+part 'generated/xxx_xxx.g.dart';
+```
