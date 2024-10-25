@@ -69,16 +69,6 @@ Future<void> getSearchRepositories(
 }
 ```
 
-## Code Generate
-
-`freezed` / `riverpod`などの自動生成ファイルが乱雑化してしまうため、`build.yaml`を利用し  
-`generated/`フォルダにファイルを生成する様に指定しているため、コード生成時のパス指定に十分注意すること
-
-```dart
-part 'generated/xxx_xxx.freezed.dart';
-part 'generated/xxx_xxx.g.dart';
-```
-
 ## Confidential information
 
 ### Github Apps
@@ -111,3 +101,21 @@ $ source .envrc
 ```zsh
 $ fvm flutter pub run build_runner build --delete-conflicting-outputs
 ```
+
+## Code Generate
+
+`freezed` / `riverpod`などの自動生成ファイルが乱雑化してしまうため、`build.yaml`を利用し  
+`generated/`フォルダにファイルを生成する様に指定しているため、コード生成時のパス指定に十分注意すること
+
+```dart
+part 'generated/xxx_xxx.freezed.dart';
+part 'generated/xxx_xxx.g.dart';
+```
+
+## Analyzer
+- [very_good_analysis](https://pub.dev/packages/very_good_analysis)を採用
+
+### 理由
+- 堅牢な規約として定義しておきたいため
+- 信頼性がある
+- 普段は[pedantic_mono](https://pub.dev/packages/pedantic_mono)を利用しているが、せっかくなので導入してみた
