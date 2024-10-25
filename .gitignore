@@ -47,4 +47,3 @@ app.*.map.json
 
 # ENV
 .envrc
-lib/utils/env/generated/env.g.dart
