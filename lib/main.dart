@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yumemi_code_check/command_service/search.dart';
+import 'package:yumemi_code_check/src/i18n/output/strings.g.dart';
 import 'package:yumemi_code_check/thema/custom_theme.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  WidgetsFlutterBinding.ensureInitialized();
+  LocaleSettings.useDeviceLocale();
+
+  runApp(
+    ProviderScope(
+      child: TranslationProvider(child: const MyApp()),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {
@@ -16,6 +25,9 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       theme: customTheme.lightThemeData(context),
       darkTheme: customTheme.darkThemeData(context),
+      supportedLocales: AppLocaleUtils.supportedLocales,
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      locale: TranslationProvider.of(context).flutterLocale,
       home: const Test(),
     );
   }
@@ -38,6 +50,6 @@ class _TestState extends ConsumerState<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(child: Text(i18n.sample.title));
   }
 }
