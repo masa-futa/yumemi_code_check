@@ -7,7 +7,7 @@ part of '../search_api_client.dart';
 // **************************************************************************
 
 String _$getSearchRepositoriesHash() =>
-    r'0a87f5e9710e9ea0e40f5ae19f5f1e919852e90f';
+    r'b752d0cd30533bf22f95ba19aee76ae111fb216a';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -43,7 +43,7 @@ class GetSearchRepositoriesFamily extends Family<AsyncValue<void>> {
   GetSearchRepositoriesProvider call({
     required String token,
     required String keyword,
-    required QueryService<Model> queryService,
+    required QueryService<SearchModel> queryService,
   }) {
     return GetSearchRepositoriesProvider(
       token: token,
@@ -84,7 +84,7 @@ class GetSearchRepositoriesProvider extends AutoDisposeFutureProvider<void> {
   GetSearchRepositoriesProvider({
     required String token,
     required String keyword,
-    required QueryService<Model> queryService,
+    required QueryService<SearchModel> queryService,
   }) : this._internal(
           (ref) => getSearchRepositories(
             ref as GetSearchRepositoriesRef,
@@ -120,7 +120,7 @@ class GetSearchRepositoriesProvider extends AutoDisposeFutureProvider<void> {
 
   final String token;
   final String keyword;
-  final QueryService<Model> queryService;
+  final QueryService<SearchModel> queryService;
 
   @override
   Override overrideWith(
@@ -176,7 +176,7 @@ mixin GetSearchRepositoriesRef on AutoDisposeFutureProviderRef<void> {
   String get keyword;
 
   /// The parameter `queryService` of this provider.
-  QueryService<Model> get queryService;
+  QueryService<SearchModel> get queryService;
 }
 
 class _GetSearchRepositoriesProviderElement
@@ -189,7 +189,7 @@ class _GetSearchRepositoriesProviderElement
   @override
   String get keyword => (origin as GetSearchRepositoriesProvider).keyword;
   @override
-  QueryService<Model> get queryService =>
+  QueryService<SearchModel> get queryService =>
       (origin as GetSearchRepositoriesProvider).queryService;
 }
 // ignore_for_file: type=lint

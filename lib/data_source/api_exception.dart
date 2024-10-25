@@ -12,6 +12,7 @@ ApiException apiException(Ref ref, {required int statucCode}) =>
       404 => NotFound(),
       422 => UnprocessableEntity(),
       429 => TooManyRequests(),
+      503 => ServiceUnavailable(),
       _ => Other(),
     };
 
@@ -30,3 +31,5 @@ final class UnprocessableEntity extends ApiException {}
 final class TooManyRequests extends ApiException {}
 
 final class Other extends ApiException {}
+
+final class ServiceUnavailable extends ApiException {}

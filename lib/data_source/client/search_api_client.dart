@@ -17,7 +17,7 @@ Future<void> getSearchRepositories(
   Ref ref, {
   required String token,
   required String keyword,
-  required QueryService queryService,
+  required QueryService<SearchModel> queryService,
 }) async {
   final config = ref.read(searchConfigProvider);
   try {
