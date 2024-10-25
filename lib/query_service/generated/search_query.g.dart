@@ -6,12 +6,12 @@ part of '../search_query.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$searchQueryHash() => r'32b53fc064ad1df246d29bc6663319c1032ef320';
+String _$searchQueryHash() => r'73391a7e10e1c84279f97dfffec70b610e1d2957';
 
 /// See also [SearchQuery].
 @ProviderFor(SearchQuery)
 final searchQueryProvider =
-    AutoDisposeAsyncNotifierProvider<SearchQuery, SearchModel>.internal(
+    AutoDisposeNotifierProvider<SearchQuery, SearchQueryState>.internal(
   SearchQuery.new,
   name: r'searchQueryProvider',
   debugGetCreateSourceHash:
@@ -20,6 +20,6 @@ final searchQueryProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$SearchQuery = AutoDisposeAsyncNotifier<SearchModel>;
+typedef _$SearchQuery = AutoDisposeNotifier<SearchQueryState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
