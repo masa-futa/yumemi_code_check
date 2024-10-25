@@ -12,6 +12,7 @@ class SearchConfig extends ApiConfig<SearchQuery> {
 
   @override
   Map<String, String>? header([String? token]) {
+    assert(token != null, 'Prerequisite is to have a token');
     return {
       ...accept,
       ...defaultAuthorization(token!),
