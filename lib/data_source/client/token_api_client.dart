@@ -26,7 +26,7 @@ Future<Result<String, ApiException>> getToken(Ref ref) async {
       return Failure(exception, StackTrace.empty);
     }
 
-    final decoded = json.decode(response.body);
+    final decoded = json.decode(response.body) as Map<String, dynamic>;
     final token = TokenModel.fromJson(decoded).token;
     return Success(token);
   } on ApiException catch (e, s) {

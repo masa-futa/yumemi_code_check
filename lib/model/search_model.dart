@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yumemi_code_check/model/model.dart';
 
 part 'generated/search_model.freezed.dart';
+
 part 'generated/search_model.g.dart';
 
 @freezed
@@ -47,4 +48,3 @@ class Owner with _$Owner {
 
   factory Owner.fromJson(Map<String, dynamic> json) => _$OwnerFromJson(json);
 }
-
