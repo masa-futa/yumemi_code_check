@@ -119,3 +119,20 @@ part 'generated/xxx_xxx.g.dart';
 - 堅牢な規約として定義しておきたいため
 - 信頼性がある
 - 普段は[pedantic_mono](https://pub.dev/packages/pedantic_mono)を利用しているが、せっかくなので導入してみた
+
+## Multilingual support
+- 多言語管理に[slang](https://pub.dev/packages/slang)を採用
+### input file
+- 文言ファイルの形式として`json` / `env` / `yaml`様々な形式をサポートしているが、今回は`yaml`を採用
+  - 他定義ファイル形式と統一するため
+- 多言語として`ja` / `en`のみサポートする様に実施
+- どちらのファイルも階層構造は統一すること  
+利用方法)
+```dart
+i18n.sample.title;
+```
+のように、`i18n`からアクセスできるように`build.yaml`内で`translate_var`を変更している
+
+### output file
+- input fileを編集した場合、`build_runner`を実施
+- 出力先は`build.yaml`の`output_directory`にて指定しているため、自動で生成してくれます
