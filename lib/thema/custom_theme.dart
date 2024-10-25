@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yumemi_code_check/extension/build_context_extension.dart';
 import 'package:yumemi_code_check/utils/gen/colors.gen.dart';
@@ -10,7 +11,7 @@ part 'custom_theme.divider.dart';
 part 'custom_theme.g.dart';
 
 @Riverpod(keepAlive: true)
-CustomTheme customTheme(CustomThemeRef ref) => CustomTheme();
+CustomTheme customTheme(Ref ref) => CustomTheme();
 
 class CustomTheme {
   ThemeData lightThemeData(BuildContext context) {
