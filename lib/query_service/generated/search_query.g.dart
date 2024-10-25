@@ -6,7 +6,7 @@ part of '../search_query.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$searchQueryHash() => r'73391a7e10e1c84279f97dfffec70b610e1d2957';
+String _$searchQueryHash() => r'da328b9fd11129a12b736b101f579b48b60d7c56';
 
 /// See also [SearchQuery].
 @ProviderFor(SearchQuery)

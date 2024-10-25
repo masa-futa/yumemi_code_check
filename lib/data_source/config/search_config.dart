@@ -12,7 +12,6 @@ class SearchConfig extends ApiConfig<SearchQuery> {
 
   @override
   Map<String, String>? header([String? token]) {
-    assert(token != null);
     return {
       ...accept,
       ...defaultAuthorization(token!),
@@ -29,9 +28,9 @@ class SearchConfig extends ApiConfig<SearchQuery> {
 
 /// Uri Queryを指定するQueryオブジェクト
 /// 各APIに対して、必要な場合に[Query]を継承し生成する
-/// [keyword]は検索するキーワードを入力してください。
-/// [page]はページングする値を指定してください。
 class SearchQuery extends Query {
+  /// [keyword]は検索するキーワードを入力してください。
+  /// [page]はページングする値を指定してください。
   Map<String, dynamic> get(String keyword, [int page = 1]) => {
         'q': keyword,
         'per_page': '20',

@@ -32,7 +32,7 @@ Future<void> getSearchRepositories(
       queryService.subscribe(Failure(exception, StackTrace.empty));
       return;
     }
-    final decoded = json.decode(response.body);
+    final decoded = json.decode(response.body) as Map<String, dynamic>;
     final searchModel = SearchModel.fromJson(decoded);
     queryService.subscribe(Success(searchModel));
   } on ApiException catch (e, s) {

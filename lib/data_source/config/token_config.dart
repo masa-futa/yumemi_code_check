@@ -11,10 +11,10 @@ TokenConfig tokenConfig(Ref ref) => TokenConfig();
 class TokenConfig extends ApiConfig {
   @override
   Map<String, String>? header([String? token]) => {
-    ...accept,
-    ...jwtAuthorization,
-    ...version,
-  };
+        ...accept,
+        ...jwtAuthorization,
+        ...version,
+      };
 
   @override
   String get path => '/app/installations/${Env.installationId}/access_tokens';
