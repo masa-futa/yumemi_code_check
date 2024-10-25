@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:yumemi_code_check/feature/search/search_screen.dart';
+import 'package:yumemi_code_check/command_service/search.dart';
 import 'package:yumemi_code_check/thema/custom_theme.dart';
 
 void main() {
@@ -16,7 +16,28 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       theme: customTheme.lightThemeData(context),
       darkTheme: customTheme.darkThemeData(context),
-      home: const SearchScreen(),
+      home: const Test(),
     );
+  }
+}
+
+// TODO(futami): UI構築時に削除予定
+class Test extends ConsumerStatefulWidget {
+  const Test({super.key});
+
+  @override
+  ConsumerState<Test> createState() => _TestState();
+}
+
+class _TestState extends ConsumerState<Test> {
+  @override
+  void initState() {
+    ref.read(getSearchCommandProvider(keyword: 'flutter').future);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
