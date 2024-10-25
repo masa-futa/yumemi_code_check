@@ -98,7 +98,8 @@ class __$$SearchQueryStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchQueryStateImpl implements _SearchQueryState {
-  const _$SearchQueryStateImpl({this.searchModel = const AsyncValue.loading()});
+  const _$SearchQueryStateImpl(
+      {this.searchModel = const AsyncValue<SearchModel>.loading()});
 
   @override
   @JsonKey()
