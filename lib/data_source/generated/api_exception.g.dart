@@ -6,7 +6,7 @@ part of '../api_exception.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$apiExceptionHash() => r'c0212718e36076e80835d40d7246b4a9f51599e9';
+String _$apiExceptionHash() => r'7466e11b892677eee7f5485f6d6f1205b848cbbb';
 
 /// Copied from Dart SDK
 class _SystemHash {
