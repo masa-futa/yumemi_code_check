@@ -6,6 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yumemi_code_check/data_source/api_exception.dart';
 import 'package:yumemi_code_check/data_source/config/token_config.dart';
 import 'package:yumemi_code_check/model/token_model.dart';
+import 'package:yumemi_code_check/utils/constant/api_client_constant.dart';
 import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/token_api_client.g.dart';
@@ -19,7 +20,7 @@ Future<Result<String, ApiException>> getToken(Ref ref) async {
       Uri.https(config.host, config.path),
       headers: config.header(),
     );
-    if (response.statusCode > 209) {
+    if (response.statusCode > ApiClientConstant.successStatusCode) {
       final exception =
           ref.read(apiExceptionProvider(statucCode: response.statusCode));
       return Failure(exception, StackTrace.empty);

@@ -7,6 +7,7 @@ import 'package:yumemi_code_check/data_source/api_exception.dart';
 import 'package:yumemi_code_check/data_source/config/search_config.dart';
 import 'package:yumemi_code_check/model/search_model.dart';
 import 'package:yumemi_code_check/query_service/query_service.dart';
+import 'package:yumemi_code_check/utils/constant/api_client_constant.dart';
 import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/search_api_client.g.dart';
@@ -25,7 +26,7 @@ Future<void> getSearchRepositories(
       headers: config.header(token),
     );
 
-    if (response.statusCode > 209) {
+    if (response.statusCode > ApiClientConstant.successStatusCode) {
       final exception =
           ref.read(apiExceptionProvider(statucCode: response.statusCode));
       queryService.subscribe(Failure(exception, StackTrace.empty));
