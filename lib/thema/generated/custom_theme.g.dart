@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'custom_theme.dart';
+part of '../custom_theme.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$customThemeHash() => r'938c27c0c59a37ac0463e08dfff761eb0cdbe3dd';
+String _$customThemeHash() => r'8889b3efb584dcfbcca77c8e1786e9efad4095df';
 
 /// See also [customTheme].
 @ProviderFor(customTheme)
