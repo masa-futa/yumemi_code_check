@@ -1,2 +1,42 @@
-sample:
-  title: "サンプル"
+search:
+  title: "検索"
+  empty: "検索するRepository名を入力してください"
+  card:
+    star: "Star"
+    fork: "Fork"
+    issue: "Issue"
+    watch: "Watch"
+
+debug:
+  title: "デバッグ機能"
+  repositorySearch:
+    title: "リポジトリ検索"
+
+error:
+  common: "エラーが発生しました"
+  caption: "通信環境の良い環境で再度やり直すか\n復旧しない場合、管理者にお問い合わせください。"
+  apiException:
+    badRequest:
+      name: "不正なリクエスト"
+      description: "無効なリクエストを実施したためエラーが発生しました。"
+    unauthorized:
+      name: "未認証"
+      description: "リクエストは未認証です。"
+    forbidden:
+      name: "権限"
+      description: "コンテンツにアクセスする権限がありません。"
+    notFound:
+      name: "未検出"
+      description: "サーバーはリクエストされたリソースを見つけられませんでした。"
+    unprocessableEntity:
+      name: "検証エラー"
+      description: "リクエストを正しく検証できませんでした。"
+    tooManyRequests:
+      name: "リクエスト過多"
+      description: "リクエストが超過しました。"
+    other:
+      name: "通信エラー"
+      description: "通信エラーが発生しました。"
+    serviceUnavailable:
+      name: "サービス利用不可"
+      description: "サーバー側でエラーが発生しました。"
