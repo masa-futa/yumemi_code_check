@@ -5,6 +5,7 @@ import 'package:yumemi_code_check/feature/search/search_component.card.dart';
 import 'package:yumemi_code_check/feature/search/search_component.empty.dart';
 import 'package:yumemi_code_check/feature/search/search_component.error.dart';
 import 'package:yumemi_code_check/feature/search/search_component.header.dart';
+import 'package:yumemi_code_check/feature/search/search_component.initial.dart';
 import 'package:yumemi_code_check/query_service/search_query.dart';
 import 'package:yumemi_code_check/utils/i18n/output/strings.g.dart';
 import 'package:yumemi_code_check/widget/base_scaffold.dart';
@@ -41,19 +42,22 @@ class SearchScreen extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 24),
             sliver: SliverToBoxAdapter(
               child: ref.watch(searchQueryProvider).when(
-                    init: SearchComponentEmptyWidget.new,
+                    init: SearchComponentInitialWidget.new,
                     search: (model) => switch (model) {
                       AsyncError(:final error) => SearchComponentErrorWidget(
                           exception: error as Exception,
                         ),
-                      AsyncData(:final value) => ListView.separated(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) =>
-                              SearchComponentCard(item: value[index]),
-                          separatorBuilder: (context, index) => const Gap(24),
-                          itemCount: value.length,
-                        ),
+                      AsyncData(:final value) => value.isEmpty
+                          ? const SearchComponentEmptyWidget()
+                          : ListView.separated(
+                              physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) =>
+                                  SearchComponentCard(item: value[index]),
+                              separatorBuilder: (context, index) =>
+                                  const Gap(24),
+                              itemCount: value.length,
+                            ),
                       _ => const Center(child: CircularProgressIndicator())
                     },
                   ),
