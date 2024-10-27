@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yumemi_code_check/data_source/local_storage/local_storage_client.dart';
 import 'package:yumemi_code_check/extension/build_context_extension.dart';
-import 'package:yumemi_code_check/widget/base_scaffold.dart';
 
 class DebugScreen extends ConsumerWidget {
   const DebugScreen({super.key});
