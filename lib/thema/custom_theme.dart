@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:yumemi_code_check/extension/build_context_extension.dart';
 import 'package:yumemi_code_check/utils/gen/colors.gen.dart';
 
 part 'custom_theme.input_decoration.dart';
 
 part 'custom_theme.divider.dart';
 
-part 'custom_theme.g.dart';
+part 'custom_theme.icon_button.dart';
+
+part 'generated/custom_theme.g.dart';
 
 @Riverpod(keepAlive: true)
 CustomTheme customTheme(Ref ref) => CustomTheme();
 
 class CustomTheme {
   ThemeData lightThemeData(BuildContext context) {
-    return ThemeData(
-      useMaterial3: true,
+    return ThemeData.light(useMaterial3: true).copyWith(
       primaryColor: ColorName.litePrimary,
       colorScheme: const ColorScheme.light(
         primary: ColorName.litePrimary,
@@ -27,17 +27,21 @@ class CustomTheme {
         surfaceContainerHigh: ColorName.liteSurfaceContainerHigh,
         onSurfaceVariant: ColorName.liteOnSurfaceVariant,
       ),
-      dividerTheme: dividerThemeData(context),
-      inputDecorationTheme: inputDecorationTheme(context),
+      dividerTheme: dividerLiteThemeData(),
+      inputDecorationTheme: inputDecorationTheme().copyWith(
+        filled: true,
+        fillColor: ColorName.liteSurfaceContainerHigh,
+      ),
+      iconButtonTheme: iconButtonLiteThemeData(),
     );
   }
 
   ThemeData darkThemeData(BuildContext context) {
-    return ThemeData(
-      useMaterial3: true,
+    return ThemeData.dark(useMaterial3: true).copyWith(
       primaryColor: ColorName.darkPrimary,
       colorScheme: const ColorScheme.dark(
         primary: ColorName.darkPrimary,
+        onPrimary: ColorName.darkOnPrimary,
         secondary: ColorName.darkSecondary,
         surface: ColorName.darkSurface,
         tertiary: ColorName.darkTertiary,
@@ -45,8 +49,12 @@ class CustomTheme {
         surfaceContainerHigh: ColorName.darkSurfaceContainerHigh,
         onSurfaceVariant: ColorName.darkOnSurfaceVariant,
       ),
-      dividerTheme: dividerThemeData(context),
-      inputDecorationTheme: inputDecorationTheme(context),
+      dividerTheme: dividerDarkThemeData(),
+      inputDecorationTheme: inputDecorationTheme().copyWith(
+        filled: true,
+        fillColor: ColorName.darkSurfaceContainerHigh,
+      ),
+      iconButtonTheme: iconButtonDarkThemeData(),
     );
   }
 }

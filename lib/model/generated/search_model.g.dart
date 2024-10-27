@@ -8,7 +8,6 @@ part of '../search_model.dart';
 
 _$SearchModelImpl _$$SearchModelImplFromJson(Map<String, dynamic> json) =>
     _$SearchModelImpl(
-      totalCount: (json['total_count'] as num).toInt(),
       items: (json['items'] as List<dynamic>)
           .map((e) => SearchItem.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +15,6 @@ _$SearchModelImpl _$$SearchModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$SearchModelImplToJson(_$SearchModelImpl instance) =>
     <String, dynamic>{
-      'total_count': instance.totalCount,
       'items': instance.items,
     };
 
@@ -28,6 +26,7 @@ _$SearchItemImpl _$$SearchItemImplFromJson(Map<String, dynamic> json) =>
       watchersCount: (json['watchers_count'] as num).toInt(),
       forksCount: (json['forks_count'] as num).toInt(),
       openIssuesCount: (json['open_issues_count'] as num).toInt(),
+      stargazersCount: (json['stargazers_count'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$SearchItemImplToJson(_$SearchItemImpl instance) =>
@@ -38,13 +37,14 @@ Map<String, dynamic> _$$SearchItemImplToJson(_$SearchItemImpl instance) =>
       'watchers_count': instance.watchersCount,
       'forks_count': instance.forksCount,
       'open_issues_count': instance.openIssuesCount,
+      'stargazers_count': instance.stargazersCount,
     };
 
 _$OwnerImpl _$$OwnerImplFromJson(Map<String, dynamic> json) => _$OwnerImpl(
-      avatarUrl: json['avatarUrl'] as String?,
+      avatarUrl: json['avatar_url'] as String?,
     );
 
 Map<String, dynamic> _$$OwnerImplToJson(_$OwnerImpl instance) =>
     <String, dynamic>{
-      'avatarUrl': instance.avatarUrl,
+      'avatar_url': instance.avatarUrl,
     };

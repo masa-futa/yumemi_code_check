@@ -192,5 +192,140 @@ class _GetSearchRepositoriesProviderElement
   QueryService<SearchModel> get queryService =>
       (origin as GetSearchRepositoriesProvider).queryService;
 }
+
+String _$getLocalSearchRepositoriesHash() =>
+    r'4e5ff9a10190412f65c3eac0bc404fe7aeeb0e50';
+
+/// See also [getLocalSearchRepositories].
+@ProviderFor(getLocalSearchRepositories)
+const getLocalSearchRepositoriesProvider = GetLocalSearchRepositoriesFamily();
+
+/// See also [getLocalSearchRepositories].
+class GetLocalSearchRepositoriesFamily extends Family<AsyncValue<void>> {
+  /// See also [getLocalSearchRepositories].
+  const GetLocalSearchRepositoriesFamily();
+
+  /// See also [getLocalSearchRepositories].
+  GetLocalSearchRepositoriesProvider call({
+    required QueryService<SearchModel> queryService,
+  }) {
+    return GetLocalSearchRepositoriesProvider(
+      queryService: queryService,
+    );
+  }
+
+  @override
+  GetLocalSearchRepositoriesProvider getProviderOverride(
+    covariant GetLocalSearchRepositoriesProvider provider,
+  ) {
+    return call(
+      queryService: provider.queryService,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'getLocalSearchRepositoriesProvider';
+}
+
+/// See also [getLocalSearchRepositories].
+class GetLocalSearchRepositoriesProvider
+    extends AutoDisposeFutureProvider<void> {
+  /// See also [getLocalSearchRepositories].
+  GetLocalSearchRepositoriesProvider({
+    required QueryService<SearchModel> queryService,
+  }) : this._internal(
+          (ref) => getLocalSearchRepositories(
+            ref as GetLocalSearchRepositoriesRef,
+            queryService: queryService,
+          ),
+          from: getLocalSearchRepositoriesProvider,
+          name: r'getLocalSearchRepositoriesProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$getLocalSearchRepositoriesHash,
+          dependencies: GetLocalSearchRepositoriesFamily._dependencies,
+          allTransitiveDependencies:
+              GetLocalSearchRepositoriesFamily._allTransitiveDependencies,
+          queryService: queryService,
+        );
+
+  GetLocalSearchRepositoriesProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.queryService,
+  }) : super.internal();
+
+  final QueryService<SearchModel> queryService;
+
+  @override
+  Override overrideWith(
+    FutureOr<void> Function(GetLocalSearchRepositoriesRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: GetLocalSearchRepositoriesProvider._internal(
+        (ref) => create(ref as GetLocalSearchRepositoriesRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        queryService: queryService,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<void> createElement() {
+    return _GetLocalSearchRepositoriesProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is GetLocalSearchRepositoriesProvider &&
+        other.queryService == queryService;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, queryService.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin GetLocalSearchRepositoriesRef on AutoDisposeFutureProviderRef<void> {
+  /// The parameter `queryService` of this provider.
+  QueryService<SearchModel> get queryService;
+}
+
+class _GetLocalSearchRepositoriesProviderElement
+    extends AutoDisposeFutureProviderElement<void>
+    with GetLocalSearchRepositoriesRef {
+  _GetLocalSearchRepositoriesProviderElement(super.provider);
+
+  @override
+  QueryService<SearchModel> get queryService =>
+      (origin as GetLocalSearchRepositoriesProvider).queryService;
+}
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

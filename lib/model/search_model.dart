@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:yumemi_code_check/model/model.dart';
 
 part 'generated/search_model.freezed.dart';
@@ -9,8 +10,6 @@ part 'generated/search_model.g.dart';
 class SearchModel extends Model with _$SearchModel {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory SearchModel({
-    // スター数
-    required int totalCount,
     required List<SearchItem> items,
   }) = _SearchModel;
 
@@ -33,6 +32,8 @@ class SearchItem with _$SearchItem {
     required int forksCount,
     // Issue数
     required int openIssuesCount,
+    // スター数
+    required int stargazersCount,
   }) = _SearchItem;
 
   factory SearchItem.fromJson(Map<String, dynamic> json) =>
@@ -41,6 +42,7 @@ class SearchItem with _$SearchItem {
 
 @freezed
 class Owner with _$Owner {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Owner({
     // オーナーアイコン
     required String? avatarUrl,

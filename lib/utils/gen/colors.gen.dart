@@ -13,6 +13,9 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
+  /// Color: #FF381E72
+  static const Color darkOnPrimary = Color(0xFF381E72);
+
   /// Color: #FFCAC4D0
   static const Color darkOnSurfaceVariant = Color(0xFFCAC4D0);
 
@@ -33,6 +36,9 @@ class ColorName {
 
   /// Color: #FFEFB8C8
   static const Color darkTertiary = Color(0xFFEFB8C8);
+
+  /// Color: #FFFFFFFF
+  static const Color liteOnPrimary = Color(0xFFFFFFFF);
 
   /// Color: #FF49454F
   static const Color liteOnSurfaceVariant = Color(0xFF49454F);

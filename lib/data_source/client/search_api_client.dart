@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -8,6 +9,7 @@ import 'package:yumemi_code_check/data_source/config/search_config.dart';
 import 'package:yumemi_code_check/model/search_model.dart';
 import 'package:yumemi_code_check/query_service/query_service.dart';
 import 'package:yumemi_code_check/utils/constant/api_client_constant.dart';
+import 'package:yumemi_code_check/utils/gen/assets.gen.dart';
 import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/search_api_client.g.dart';
@@ -38,4 +40,16 @@ Future<void> getSearchRepositories(
   } on ApiException catch (e, s) {
     queryService.subscribe(Failure(e, s));
   }
+}
+
+@riverpod
+Future<void> getLocalSearchRepositories(
+  Ref ref, {
+  required QueryService<SearchModel> queryService,
+}) async {
+  final jsonString =
+      await rootBundle.loadString(Assets.searchRepositories);
+  final decoded = json.decode(jsonString) as Map<String, dynamic>;
+  final searchModel = SearchModel.fromJson(decoded);
+  queryService.subscribe(Success(searchModel));
 }

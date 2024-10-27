@@ -20,8 +20,6 @@ SearchModel _$SearchModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SearchModel {
-// スター数
-  int get totalCount => throw _privateConstructorUsedError;
   List<SearchItem> get items => throw _privateConstructorUsedError;
 
   /// Serializes this SearchModel to a JSON map.
@@ -40,7 +38,7 @@ abstract class $SearchModelCopyWith<$Res> {
           SearchModel value, $Res Function(SearchModel) then) =
       _$SearchModelCopyWithImpl<$Res, SearchModel>;
   @useResult
-  $Res call({int totalCount, List<SearchItem> items});
+  $Res call({List<SearchItem> items});
 }
 
 /// @nodoc
@@ -58,14 +56,9 @@ class _$SearchModelCopyWithImpl<$Res, $Val extends SearchModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCount = null,
     Object? items = null,
   }) {
     return _then(_value.copyWith(
-      totalCount: null == totalCount
-          ? _value.totalCount
-          : totalCount // ignore: cast_nullable_to_non_nullable
-              as int,
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -82,7 +75,7 @@ abstract class _$$SearchModelImplCopyWith<$Res>
       __$$SearchModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int totalCount, List<SearchItem> items});
+  $Res call({List<SearchItem> items});
 }
 
 /// @nodoc
@@ -98,14 +91,9 @@ class __$$SearchModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCount = null,
     Object? items = null,
   }) {
     return _then(_$SearchModelImpl(
-      totalCount: null == totalCount
-          ? _value.totalCount
-          : totalCount // ignore: cast_nullable_to_non_nullable
-              as int,
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -118,16 +106,12 @@ class __$$SearchModelImplCopyWithImpl<$Res>
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _$SearchModelImpl implements _SearchModel {
-  const _$SearchModelImpl(
-      {required this.totalCount, required final List<SearchItem> items})
+  const _$SearchModelImpl({required final List<SearchItem> items})
       : _items = items;
 
   factory _$SearchModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchModelImplFromJson(json);
 
-// スター数
-  @override
-  final int totalCount;
   final List<SearchItem> _items;
   @override
   List<SearchItem> get items {
@@ -138,7 +122,7 @@ class _$SearchModelImpl implements _SearchModel {
 
   @override
   String toString() {
-    return 'SearchModel(totalCount: $totalCount, items: $items)';
+    return 'SearchModel(items: $items)';
   }
 
   @override
@@ -146,15 +130,13 @@ class _$SearchModelImpl implements _SearchModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchModelImpl &&
-            (identical(other.totalCount, totalCount) ||
-                other.totalCount == totalCount) &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, totalCount, const DeepCollectionEquality().hash(_items));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
   /// Create a copy of SearchModel
   /// with the given fields replaced by the non-null parameter values.
@@ -173,16 +155,12 @@ class _$SearchModelImpl implements _SearchModel {
 }
 
 abstract class _SearchModel implements SearchModel {
-  const factory _SearchModel(
-      {required final int totalCount,
-      required final List<SearchItem> items}) = _$SearchModelImpl;
+  const factory _SearchModel({required final List<SearchItem> items}) =
+      _$SearchModelImpl;
 
   factory _SearchModel.fromJson(Map<String, dynamic> json) =
       _$SearchModelImpl.fromJson;
 
-// スター数
-  @override
-  int get totalCount;
   @override
   List<SearchItem> get items;
 
@@ -206,7 +184,8 @@ mixin _$SearchItem {
   String? get language => throw _privateConstructorUsedError; // Watcher数
   int get watchersCount => throw _privateConstructorUsedError; // Fork数
   int get forksCount => throw _privateConstructorUsedError; // Issue数
-  int get openIssuesCount => throw _privateConstructorUsedError;
+  int get openIssuesCount => throw _privateConstructorUsedError; // スター数
+  int get stargazersCount => throw _privateConstructorUsedError;
 
   /// Serializes this SearchItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -230,7 +209,8 @@ abstract class $SearchItemCopyWith<$Res> {
       String? language,
       int watchersCount,
       int forksCount,
-      int openIssuesCount});
+      int openIssuesCount,
+      int stargazersCount});
 
   $OwnerCopyWith<$Res> get owner;
 }
@@ -256,6 +236,7 @@ class _$SearchItemCopyWithImpl<$Res, $Val extends SearchItem>
     Object? watchersCount = null,
     Object? forksCount = null,
     Object? openIssuesCount = null,
+    Object? stargazersCount = null,
   }) {
     return _then(_value.copyWith(
       fullName: freezed == fullName
@@ -281,6 +262,10 @@ class _$SearchItemCopyWithImpl<$Res, $Val extends SearchItem>
       openIssuesCount: null == openIssuesCount
           ? _value.openIssuesCount
           : openIssuesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -310,7 +295,8 @@ abstract class _$$SearchItemImplCopyWith<$Res>
       String? language,
       int watchersCount,
       int forksCount,
-      int openIssuesCount});
+      int openIssuesCount,
+      int stargazersCount});
 
   @override
   $OwnerCopyWith<$Res> get owner;
@@ -335,6 +321,7 @@ class __$$SearchItemImplCopyWithImpl<$Res>
     Object? watchersCount = null,
     Object? forksCount = null,
     Object? openIssuesCount = null,
+    Object? stargazersCount = null,
   }) {
     return _then(_$SearchItemImpl(
       fullName: freezed == fullName
@@ -361,6 +348,10 @@ class __$$SearchItemImplCopyWithImpl<$Res>
           ? _value.openIssuesCount
           : openIssuesCount // ignore: cast_nullable_to_non_nullable
               as int,
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -375,7 +366,8 @@ class _$SearchItemImpl implements _SearchItem {
       required this.language,
       required this.watchersCount,
       required this.forksCount,
-      required this.openIssuesCount});
+      required this.openIssuesCount,
+      required this.stargazersCount});
 
   factory _$SearchItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchItemImplFromJson(json);
@@ -397,10 +389,13 @@ class _$SearchItemImpl implements _SearchItem {
 // Issue数
   @override
   final int openIssuesCount;
+// スター数
+  @override
+  final int stargazersCount;
 
   @override
   String toString() {
-    return 'SearchItem(fullName: $fullName, owner: $owner, language: $language, watchersCount: $watchersCount, forksCount: $forksCount, openIssuesCount: $openIssuesCount)';
+    return 'SearchItem(fullName: $fullName, owner: $owner, language: $language, watchersCount: $watchersCount, forksCount: $forksCount, openIssuesCount: $openIssuesCount, stargazersCount: $stargazersCount)';
   }
 
   @override
@@ -418,13 +413,15 @@ class _$SearchItemImpl implements _SearchItem {
             (identical(other.forksCount, forksCount) ||
                 other.forksCount == forksCount) &&
             (identical(other.openIssuesCount, openIssuesCount) ||
-                other.openIssuesCount == openIssuesCount));
+                other.openIssuesCount == openIssuesCount) &&
+            (identical(other.stargazersCount, stargazersCount) ||
+                other.stargazersCount == stargazersCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, fullName, owner, language,
-      watchersCount, forksCount, openIssuesCount);
+      watchersCount, forksCount, openIssuesCount, stargazersCount);
 
   /// Create a copy of SearchItem
   /// with the given fields replaced by the non-null parameter values.
@@ -449,7 +446,8 @@ abstract class _SearchItem implements SearchItem {
       required final String? language,
       required final int watchersCount,
       required final int forksCount,
-      required final int openIssuesCount}) = _$SearchItemImpl;
+      required final int openIssuesCount,
+      required final int stargazersCount}) = _$SearchItemImpl;
 
   factory _SearchItem.fromJson(Map<String, dynamic> json) =
       _$SearchItemImpl.fromJson;
@@ -466,7 +464,9 @@ abstract class _SearchItem implements SearchItem {
   @override
   int get forksCount; // Issue数
   @override
-  int get openIssuesCount;
+  int get openIssuesCount; // スター数
+  @override
+  int get stargazersCount;
 
   /// Create a copy of SearchItem
   /// with the given fields replaced by the non-null parameter values.
@@ -563,7 +563,8 @@ class __$$OwnerImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$OwnerImpl implements _Owner {
   const _$OwnerImpl({required this.avatarUrl});
 
