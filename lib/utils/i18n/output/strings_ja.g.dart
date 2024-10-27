@@ -50,7 +50,8 @@ class TranslationsSearchJa {
 
 	// Translations
 	String get title => '検索';
-	String get empty => '検索するRepository名を入力してください';
+	String get initial => '検索するRepository名を入力してください';
+	String get empty => '検索結果が見つかりません';
 	late final TranslationsSearchCardJa card = TranslationsSearchCardJa._(_root);
 }
 
@@ -211,7 +212,8 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'search.title': return '検索';
-			case 'search.empty': return '検索するRepository名を入力してください';
+			case 'search.initial': return '検索するRepository名を入力してください';
+			case 'search.empty': return '検索結果が見つかりません';
 			case 'search.card.star': return 'Star';
 			case 'search.card.fork': return 'Fork';
 			case 'search.card.issue': return 'Issue';

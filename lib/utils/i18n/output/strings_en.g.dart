@@ -46,7 +46,8 @@ class _TranslationsSearchEn implements TranslationsSearchJa {
 
 	// Translations
 	@override String get title => 'Search';
-	@override String get empty => 'Please enter the name of the repository to search';
+	@override String get initial => 'Please enter the name of the repository to search';
+	@override String get empty => 'No search results found';
 	@override late final _TranslationsSearchCardEn card = _TranslationsSearchCardEn._(_root);
 }
 
@@ -207,7 +208,8 @@ extension on TranslationsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'search.title': return 'Search';
-			case 'search.empty': return 'Please enter the name of the repository to search';
+			case 'search.initial': return 'Please enter the name of the repository to search';
+			case 'search.empty': return 'No search results found';
 			case 'search.card.star': return 'Star';
 			case 'search.card.fork': return 'Fork';
 			case 'search.card.issue': return 'Issue';

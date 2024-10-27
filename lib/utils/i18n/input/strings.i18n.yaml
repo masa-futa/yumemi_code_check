@@ -1,6 +1,7 @@
 search:
   title: "検索"
-  empty: "検索するRepository名を入力してください"
+  initial: "検索するRepository名を入力してください"
+  empty: "検索結果が見つかりません"
   card:
     star: "Star"
     fork: "Fork"

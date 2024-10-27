@@ -1,6 +1,7 @@
 search:
   title: "Search"
-  empty: "Please enter the name of the repository to search"
+  initial: "Please enter the name of the repository to search"
+  empty: "No search results found"
   card:
     star: "Star"
     fork: "Fork"

@@ -194,7 +194,7 @@ class _GetSearchRepositoriesProviderElement
 }
 
 String _$getLocalSearchRepositoriesHash() =>
-    r'1df7919a3c5f29397437958be80836954c8b4909';
+    r'4e5ff9a10190412f65c3eac0bc404fe7aeeb0e50';
 
 /// See also [getLocalSearchRepositories].
 @ProviderFor(getLocalSearchRepositories)
