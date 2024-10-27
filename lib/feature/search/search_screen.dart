@@ -7,13 +7,14 @@ import 'package:yumemi_code_check/feature/search/search_component.error.dart';
 import 'package:yumemi_code_check/feature/search/search_component.header.dart';
 import 'package:yumemi_code_check/query_service/search_query.dart';
 import 'package:yumemi_code_check/utils/i18n/output/strings.g.dart';
+import 'package:yumemi_code_check/widget/base_scaffold.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
+    return BaseScaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
