@@ -1,0 +1,43 @@
+search:
+  title: "Search"
+  initial: "Please enter the name of the repository to search"
+  empty: "No search results found"
+  card:
+    star: "Star"
+    fork: "Fork"
+    issue: "Issue"
+    watch: "Watch"
+
+debug:
+  title: "Debug Features"
+  repositorySearch:
+    title: "Repository Search"
+
+error:
+  common: "An error has occurred"
+  caption: "Please try again in an environment with a good connection.\nIf the issue persists, contact the administrator."
+  apiException:
+    badRequest:
+      name: "Bad Request"
+      description: "An error occurred due to an invalid request."
+    unauthorized:
+      name: "Unauthorized"
+      description: "The request is unauthorized."
+    forbidden:
+      name: "Forbidden"
+      description: "You do not have permission to access this content."
+    notFound:
+      name: "Not Found"
+      description: "The server could not find the requested resource."
+    unprocessableEntity:
+      name: "Validation Error"
+      description: "The request could not be validated properly."
+    tooManyRequests:
+      name: "Too Many Requests"
+      description: "The request limit has been exceeded."
+    other:
+      name: "Communication Error"
+      description: "A communication error has occurred."
+    serviceUnavailable:
+      name: "Service Unavailable"
+      description: "An error occurred on the server side."
