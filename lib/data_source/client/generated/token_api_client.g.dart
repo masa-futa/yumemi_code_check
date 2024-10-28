@@ -8,7 +8,9 @@ part of '../token_api_client.dart';
 
 String _$getTokenHash() => r'3355a5b4fd458f8e724fc4a969f3cab6b799bb18';
 
-/// See also [getToken].
+/// Token取得Api
+///
+/// Copied from [getToken].
 @ProviderFor(getToken)
 final getTokenProvider =
     AutoDisposeFutureProvider<Result<String, ApiException>>.internal(

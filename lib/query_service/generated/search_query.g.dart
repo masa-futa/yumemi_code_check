@@ -8,7 +8,9 @@ part of '../search_query.dart';
 
 String _$searchQueryHash() => r'44d3faf63a5cfc724626a85b0f5d8ddf735d952e';
 
-/// See also [SearchQuery].
+/// リポジトリ一覧検索時のQuery
+///
+/// Copied from [SearchQuery].
 @ProviderFor(SearchQuery)
 final searchQueryProvider =
     AutoDisposeNotifierProvider<SearchQuery, SearchQueryState>.internal(

@@ -225,16 +225,36 @@ class _GetProviderElement extends AutoDisposeFutureProviderElement<Response>
 
 String _$postHash() => r'd56d63d6022cece4366f0152f7cedc7fd0235cc9';
 
-/// See also [post].
+/// Post Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+///
+/// Copied from [post].
 @ProviderFor(post)
 const postProvider = PostFamily();
 
-/// See also [post].
+/// Post Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+///
+/// Copied from [post].
 class PostFamily extends Family<AsyncValue<Response>> {
-  /// See also [post].
+  /// Post Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  ///
+  /// Copied from [post].
   const PostFamily();
 
-  /// See also [post].
+  /// Post Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  ///
+  /// Copied from [post].
   PostProvider call(
     ApiConfig<Query?> config, [
     Map<String, dynamic>? query,
@@ -270,9 +290,19 @@ class PostFamily extends Family<AsyncValue<Response>> {
   String? get name => r'postProvider';
 }
 
-/// See also [post].
+/// Post Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+///
+/// Copied from [post].
 class PostProvider extends AutoDisposeFutureProvider<Response> {
-  /// See also [post].
+  /// Post Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  ///
+  /// Copied from [post].
   PostProvider(
     ApiConfig<Query?> config, [
     Map<String, dynamic>? query,

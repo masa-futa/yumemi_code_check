@@ -30,16 +30,24 @@ class _SystemHash {
   }
 }
 
-/// See also [getSearchRepositories].
+/// リポジトリ一覧検索Api
+///
+/// Copied from [getSearchRepositories].
 @ProviderFor(getSearchRepositories)
 const getSearchRepositoriesProvider = GetSearchRepositoriesFamily();
 
-/// See also [getSearchRepositories].
+/// リポジトリ一覧検索Api
+///
+/// Copied from [getSearchRepositories].
 class GetSearchRepositoriesFamily extends Family<AsyncValue<void>> {
-  /// See also [getSearchRepositories].
+  /// リポジトリ一覧検索Api
+  ///
+  /// Copied from [getSearchRepositories].
   const GetSearchRepositoriesFamily();
 
-  /// See also [getSearchRepositories].
+  /// リポジトリ一覧検索Api
+  ///
+  /// Copied from [getSearchRepositories].
   GetSearchRepositoriesProvider call({
     required String token,
     required String keyword,
@@ -78,9 +86,13 @@ class GetSearchRepositoriesFamily extends Family<AsyncValue<void>> {
   String? get name => r'getSearchRepositoriesProvider';
 }
 
-/// See also [getSearchRepositories].
+/// リポジトリ一覧検索Api
+///
+/// Copied from [getSearchRepositories].
 class GetSearchRepositoriesProvider extends AutoDisposeFutureProvider<void> {
-  /// See also [getSearchRepositories].
+  /// リポジトリ一覧検索Api
+  ///
+  /// Copied from [getSearchRepositories].
   GetSearchRepositoriesProvider({
     required String token,
     required String keyword,
@@ -196,16 +208,24 @@ class _GetSearchRepositoriesProviderElement
 String _$getLocalSearchRepositoriesHash() =>
     r'4e5ff9a10190412f65c3eac0bc404fe7aeeb0e50';
 
-/// See also [getLocalSearchRepositories].
+/// デバッグ用のリポジトリ一覧検索
+///
+/// Copied from [getLocalSearchRepositories].
 @ProviderFor(getLocalSearchRepositories)
 const getLocalSearchRepositoriesProvider = GetLocalSearchRepositoriesFamily();
 
-/// See also [getLocalSearchRepositories].
+/// デバッグ用のリポジトリ一覧検索
+///
+/// Copied from [getLocalSearchRepositories].
 class GetLocalSearchRepositoriesFamily extends Family<AsyncValue<void>> {
-  /// See also [getLocalSearchRepositories].
+  /// デバッグ用のリポジトリ一覧検索
+  ///
+  /// Copied from [getLocalSearchRepositories].
   const GetLocalSearchRepositoriesFamily();
 
-  /// See also [getLocalSearchRepositories].
+  /// デバッグ用のリポジトリ一覧検索
+  ///
+  /// Copied from [getLocalSearchRepositories].
   GetLocalSearchRepositoriesProvider call({
     required QueryService<SearchModel> queryService,
   }) {
@@ -238,10 +258,14 @@ class GetLocalSearchRepositoriesFamily extends Family<AsyncValue<void>> {
   String? get name => r'getLocalSearchRepositoriesProvider';
 }
 
-/// See also [getLocalSearchRepositories].
+/// デバッグ用のリポジトリ一覧検索
+///
+/// Copied from [getLocalSearchRepositories].
 class GetLocalSearchRepositoriesProvider
     extends AutoDisposeFutureProvider<void> {
-  /// See also [getLocalSearchRepositories].
+  /// デバッグ用のリポジトリ一覧検索
+  ///
+  /// Copied from [getLocalSearchRepositories].
   GetLocalSearchRepositoriesProvider({
     required QueryService<SearchModel> queryService,
   }) : this._internal(
