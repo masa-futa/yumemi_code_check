@@ -28,7 +28,7 @@ CQRS パターンを採用
 
 ```dart
 @riverpod
-Future<void> fetch(FetchRef ref) => ref.read(repository).add();
+Future<void> fetch(Ref ref, {required QueryService<XxxModel> queryService,}) => ref.read(repository).add();
 ```
 
 ### Query
@@ -136,3 +136,23 @@ i18n.sample.title;
 ### output file
 - input fileを編集した場合、`build_runner`を実施
 - 出力先は`build.yaml`の`output_directory`にて指定しているため、自動で生成してくれます
+
+## Debug
+
+- 本アプリで利用するデバッグ機能を作成している
+  - [こちら](https://github.com/masa-futa/yumemi_code_check/tree/develop?tab=readme-ov-file#confidential-information)で説明した通り、`JWT`の有効期限が非常に短いのと、取得する仕組みが確立されていないため、簡潔にデバッグ機能を利用して、UI/UXの確認を実施できるようにしている。
+  - 検索画面の右下にあるフローティングアクションボタンからデバッグ機能に遷移できる
+  - `flavor`にて分岐していないため、どの環境でも表示されてしまうが、Dev環境のみ表示させる想定で用意している
+
+## WidgetTest / UnitTest
+以下、本アプリ内でテスト対象としているディレクトリを記述する
+
+### WidgetTest
+- `feature`ディレクトリ配下のコンポーネント
+
+### UnitTest
+ロジックを含む以下ディレクトリ配下の処理
+- `command_service`
+- `api_client`
+
+※`QueryService`では、状態を保持/更新する役割のため、条件分岐を含まないのと、`api_client`側で担保されている領域となるため対象外としている
