@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yumemi_code_check/feature/search/search_component.empty.dart';
-import 'package:yumemi_code_check/feature/search/search_component.initial.dart';
 import 'package:yumemi_code_check/utils/i18n/output/strings.g.dart';
 
 void main() {

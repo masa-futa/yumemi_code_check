@@ -51,8 +51,12 @@ void main() {
       final languageTextWidget = tester.widget<Text>(languageFilter);
       final watchersCountTextWidget = tester.widget<Text>(watchersCountFilter);
       final forksCountTextWidget = tester.widget<Text>(forksCountFilter);
-      final openIssuesCountTextWidget = tester.widget<Text>(openIssuesCountFilter);
-      final stargazersCountTextWidget = tester.widget<Text>(stargazersCountFilter);
+      final openIssuesCountTextWidget = tester.widget<Text>(
+        openIssuesCountFilter,
+      );
+      final stargazersCountTextWidget = tester.widget<Text>(
+        stargazersCountFilter,
+      );
 
       expect(textWidget.style?.fontSize, 18.0);
       expect(textWidget.style?.fontWeight, FontWeight.bold);
