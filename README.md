@@ -17,8 +17,7 @@
 
 ## Basic operations
 
-<video src="https://github.com/user-attachments/assets/1e051290-7474-4af1-b96b-8e84cd28387d" width="300">
-
+基本的な操作は[Wiki](https://github.com/masa-futa/yumemi_code_check/wiki/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C)に動画を添付してるためご確認ください
 
 ## Architecture
 
