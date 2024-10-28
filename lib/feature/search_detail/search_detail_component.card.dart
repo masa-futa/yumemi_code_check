@@ -6,8 +6,8 @@ import 'package:yumemi_code_check/extension/build_context_extension.dart';
 import 'package:yumemi_code_check/query_service/search_query_state.dart';
 import 'package:yumemi_code_check/utils/i18n/output/strings.g.dart';
 
-class SearchComponentCard extends ConsumerWidget {
-  const SearchComponentCard({
+class SearchDetailComponentCard extends ConsumerWidget {
+  const SearchDetailComponentCard({
     required this.item,
     super.key,
   });
@@ -95,27 +95,14 @@ class _SearchHeaderItemWidget extends StatelessWidget {
         ),
         const Gap(16),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                repositoryName,
-                style: TextStyle(
-                  color: context.theme.colorScheme.primary,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const Gap(4),
-              Text(
-                language,
-                style: TextStyle(
-                  color: context.theme.colorScheme.primary,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
+          child:
+          Text(
+            language,
+            style: TextStyle(
+              color: context.theme.colorScheme.primary,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ],
