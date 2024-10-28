@@ -18,9 +18,13 @@ class _SearchScreenTextFieldState extends ConsumerState<SearchComponentHeader> {
   bool isEnable = false;
 
   Future<void> onTappedSearchButton() async {
-    ref.read(searchQueryProvider.notifier).search();
-    final result = await ref
-        .read(getSearchCommandProvider(keyword: controller.value.text).future);
+    final searchQuery = ref.read(searchQueryProvider.notifier)..search();
+    final result = await ref.read(
+      getSearchCommandProvider(
+        keyword: controller.value.text,
+        queryService: searchQuery,
+      ).future,
+    );
     if (result case Failure(:final exception, :final stackTrace)) {
       ref.read(searchQueryProvider.notifier).exception(exception, stackTrace);
     }
