@@ -149,6 +149,9 @@ i18n.sample.title;
   - 検索画面の右下にあるフローティングアクションボタンからデバッグ機能に遷移できる
   - `flavor`にて分岐していないため、どの環境でも表示されてしまうが、Dev環境のみ表示させる想定で用意している
 
+## エラーコード
+[Wiki](https://github.com/masa-futa/yumemi_code_check/wiki/%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89#apiexception)に記述しているため合わせてご確認ください
+
 ## WidgetTest / UnitTest
 以下、本アプリ内でテスト対象としているディレクトリを記述する
 
