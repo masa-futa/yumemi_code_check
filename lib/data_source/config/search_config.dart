@@ -7,7 +7,7 @@ part 'generated/search_config.g.dart';
 @Riverpod(keepAlive: true)
 SearchConfig searchConfig(Ref ref) => SearchConfig();
 
-class SearchConfig extends ApiConfig<SearchQuery> {
+class SearchConfig extends ApiConfig<SearchUrlQuery> {
   SearchConfig();
 
   @override
@@ -24,12 +24,12 @@ class SearchConfig extends ApiConfig<SearchQuery> {
   String get path => '/search/repositories';
 
   @override
-  SearchQuery? get query => SearchQuery();
+  SearchUrlQuery? get query => SearchUrlQuery();
 }
 
 /// Uri Queryを指定するQueryオブジェクト
 /// 各APIに対して、必要な場合に[Query]を継承し生成する
-class SearchQuery extends Query {
+class SearchUrlQuery extends Query {
   /// [keyword]は検索するキーワードを入力してください。
   /// [page]はページングする値を指定してください。
   Map<String, dynamic> get(String keyword, [int page = 1]) => {
