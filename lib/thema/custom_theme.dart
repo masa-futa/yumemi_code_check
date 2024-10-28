@@ -15,6 +15,7 @@ part 'generated/custom_theme.g.dart';
 CustomTheme customTheme(Ref ref) => CustomTheme();
 
 class CustomTheme {
+  /// ライトモードカラースキーム
   ThemeData lightThemeData(BuildContext context) {
     return ThemeData.light(useMaterial3: true).copyWith(
       primaryColor: ColorName.litePrimary,
@@ -36,6 +37,7 @@ class CustomTheme {
     );
   }
 
+  /// ダークモードカラースキーム
   ThemeData darkThemeData(BuildContext context) {
     return ThemeData.dark(useMaterial3: true).copyWith(
       primaryColor: ColorName.darkPrimary,

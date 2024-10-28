@@ -5,10 +5,20 @@
 選考となるコーディング試験用の Repository となります。  
 詳細は[[こちら]](https://github.com/yumemi-inc/flutter-engineer-codecheck?tab=readme-ov-file)をご確認ください。
 
+## Environment
+|     | Version   |
+| --- | --- | 
+|  Flutter   |  3.24.3   |
+|  Dart   |  3.5.3   | 
 ## Design
 
 [MaterialDesign](https://m3.material.io/)に準拠したデザイン構成（[Figma](https://www.figma.com/design/TGMnWz2EvDmz7aPdzzeikY/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%86%E3%82%81%E3%81%BF_%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E8%AA%B2%E9%A1%8C?node-id=0-1&node-type=canvas&t=NWliR1xRb3u7Jd17-0)）  
 ※Free のプロジェクトとなっているため扱い方にはご注意ください。
+
+## Basic operations
+
+<video src="https://github.com/user-attachments/assets/1e051290-7474-4af1-b96b-8e84cd28387d" width="300">
+
 
 ## Architecture
 
@@ -28,7 +38,7 @@ CQRS パターンを採用
 
 ```dart
 @riverpod
-Future<void> fetch(FetchRef ref) => ref.read(repository).add();
+Future<void> fetch(Ref ref, {required QueryService<XxxModel> queryService,}) => ref.read(repository).add();
 ```
 
 ### Query
@@ -136,3 +146,26 @@ i18n.sample.title;
 ### output file
 - input fileを編集した場合、`build_runner`を実施
 - 出力先は`build.yaml`の`output_directory`にて指定しているため、自動で生成してくれます
+
+## Debug
+
+- 本アプリで利用するデバッグ機能を作成している
+  - [こちら](https://github.com/masa-futa/yumemi_code_check/tree/develop?tab=readme-ov-file#confidential-information)で説明した通り、`JWT`の有効期限が非常に短いのと、取得する仕組みが確立されていないため、簡潔にデバッグ機能を利用して、UI/UXの確認を実施できるようにしている。
+  - 検索画面の右下にあるフローティングアクションボタンからデバッグ機能に遷移できる
+  - `flavor`にて分岐していないため、どの環境でも表示されてしまうが、Dev環境のみ表示させる想定で用意している
+
+## エラーコード
+[Wiki](https://github.com/masa-futa/yumemi_code_check/wiki/%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89#apiexception)に記述しているため合わせてご確認ください
+
+## WidgetTest / UnitTest
+以下、本アプリ内でテスト対象としているディレクトリを記述する
+
+### WidgetTest
+- `feature`ディレクトリ配下のコンポーネント
+
+### UnitTest
+ロジックを含む以下ディレクトリ配下の処理
+- `command_service`
+- `api_client`
+
+※`QueryService`では、状態を保持/更新する役割のため、条件分岐を含まないのと、`api_client`側で担保されている領域となるため対象外としている

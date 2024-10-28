@@ -14,6 +14,7 @@ import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/search_api_client.g.dart';
 
+/// リポジトリ一覧検索Api
 @riverpod
 Future<void> getSearchRepositories(
   Ref ref, {
@@ -41,6 +42,7 @@ Future<void> getSearchRepositories(
   }
 }
 
+/// デバッグ用のリポジトリ一覧検索
 @riverpod
 Future<void> getLocalSearchRepositories(
   Ref ref, {

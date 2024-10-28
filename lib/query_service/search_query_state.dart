@@ -13,6 +13,7 @@ class SearchQueryState with _$SearchQueryState {
   }) = _Search;
 }
 
+/// リポジトリ一覧検索用のViewState
 @freezed
 class SearchViewState with _$SearchViewState {
   const factory SearchViewState({

@@ -8,7 +8,9 @@ part of '../token_config.dart';
 
 String _$tokenConfigHash() => r'beb1ec06c5cc42c2c2cc2f76f15fdb701d385d8d';
 
-/// See also [tokenConfig].
+/// Token取得Api用Configuration
+///
+/// Copied from [tokenConfig].
 @ProviderFor(tokenConfig)
 final tokenConfigProvider = Provider<TokenConfig>.internal(
   tokenConfig,

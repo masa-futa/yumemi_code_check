@@ -8,6 +8,7 @@ import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/search_query.g.dart';
 
+/// リポジトリ一覧検索時のQuery
 @riverpod
 class SearchQuery extends _$SearchQuery implements QueryService<SearchModel> {
   @override

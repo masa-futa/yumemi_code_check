@@ -8,7 +8,9 @@ part of '../search_config.dart';
 
 String _$searchConfigHash() => r'b463a1e74ac3e038f1ed710e375f7a9532fb58a5';
 
-/// See also [searchConfig].
+/// リポジトリ一覧検索Api用Configuration
+///
+/// Copied from [searchConfig].
 @ProviderFor(searchConfig)
 final searchConfigProvider = Provider<SearchConfig>.internal(
   searchConfig,

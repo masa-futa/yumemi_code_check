@@ -4,6 +4,7 @@ import 'package:yumemi_code_check/model/model.dart';
 part 'generated/token_model.freezed.dart';
 part 'generated/token_model.g.dart';
 
+/// Token取得Entity
 @freezed
 class TokenModel extends Model with _$TokenModel {
   @JsonSerializable(fieldRename: FieldRename.snake)

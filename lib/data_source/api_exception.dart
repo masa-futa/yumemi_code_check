@@ -17,6 +17,7 @@ ApiException apiException(Ref ref, {required int statucCode}) =>
       _ => Other(),
     };
 
+/// アプリ内で利用するExceptionクラス
 sealed class ApiException implements Exception {
   String get name;
 
