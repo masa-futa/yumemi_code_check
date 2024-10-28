@@ -7,7 +7,7 @@ part of '../search_api_client.dart';
 // **************************************************************************
 
 String _$getSearchRepositoriesHash() =>
-    r'142199a6a48f799b36f7baed760a924f2cc7d81f';
+    r'3c57cde28c4d7315aff5b7c00a766d9a46a7922d';
 
 /// Copied from Dart SDK
 class _SystemHash {
