@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
 import 'package:yumemi_code_check/feature/search/search_component.empty.dart';
 import 'package:yumemi_code_check/feature/search/search_component.error.dart';
 import 'package:yumemi_code_check/feature/search/search_component.header.dart';

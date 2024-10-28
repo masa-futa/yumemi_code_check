@@ -26,7 +26,9 @@ class SearchDetailScreen extends StatelessWidget {
                 title: Text(
                   item.fullName,
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 centerTitle: true,
                 titlePadding:
