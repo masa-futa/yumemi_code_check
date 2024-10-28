@@ -6,6 +6,7 @@ part 'generated/search_model.freezed.dart';
 
 part 'generated/search_model.g.dart';
 
+/// リポジトリ一覧検索Entity
 @freezed
 class SearchModel extends Model with _$SearchModel {
   @JsonSerializable(fieldRename: FieldRename.snake)

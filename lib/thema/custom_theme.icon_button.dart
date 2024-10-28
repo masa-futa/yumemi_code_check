@@ -1,5 +1,8 @@
 part of 'custom_theme.dart';
 
+/// IconButton Theme
+/// context.themeにて分岐しColorを指定していたが、正常に読み込まれないため、
+/// ライトモード . ダークモードで利用するメソッドを分割し利用
 extension on CustomTheme {
   IconButtonThemeData iconButtonLiteThemeData() =>
       IconButtonThemeData(

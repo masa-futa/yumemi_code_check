@@ -4,6 +4,7 @@ import 'package:yumemi_code_check/data_source/config/api_config.dart';
 
 part 'generated/search_config.g.dart';
 
+/// リポジトリ一覧検索Api用Configuration
 @Riverpod(keepAlive: true)
 SearchConfig searchConfig(Ref ref) => SearchConfig();
 

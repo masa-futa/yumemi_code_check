@@ -1,5 +1,6 @@
 import 'package:yumemi_code_check/utils/env/env.dart';
 
+/// API関連のConfiguration
 abstract class ApiConfig<T extends Query?> extends Headers {
   final host = 'api.github.com';
 
@@ -19,4 +20,6 @@ class Headers {
       {'Authorization': 'Bearer $token'};
 }
 
+/// Queryオブジェクト用の抽象クラス
+/// Api実施時にqueryが必要な場合は、Apiに応じて具象クラスを作成し利用する
 abstract class Query {}

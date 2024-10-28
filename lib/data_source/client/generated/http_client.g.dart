@@ -29,16 +29,40 @@ class _SystemHash {
   }
 }
 
-/// See also [get].
+/// Get Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+/// [token]は、GithubApi実施時に必要となる情報
+///
+/// Copied from [get].
 @ProviderFor(get)
 const getProvider = GetFamily();
 
-/// See also [get].
+/// Get Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+/// [token]は、GithubApi実施時に必要となる情報
+///
+/// Copied from [get].
 class GetFamily extends Family<AsyncValue<Response>> {
-  /// See also [get].
+  /// Get Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  /// [token]は、GithubApi実施時に必要となる情報
+  ///
+  /// Copied from [get].
   const GetFamily();
 
-  /// See also [get].
+  /// Get Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  /// [token]は、GithubApi実施時に必要となる情報
+  ///
+  /// Copied from [get].
   GetProvider call(
     ApiConfig<Query?> config, [
     Map<String, dynamic>? query,
@@ -77,9 +101,21 @@ class GetFamily extends Family<AsyncValue<Response>> {
   String? get name => r'getProvider';
 }
 
-/// See also [get].
+/// Get Request Api Client
+///
+/// 共通となる[config]を利用し、host / pathを取得
+/// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+/// [token]は、GithubApi実施時に必要となる情報
+///
+/// Copied from [get].
 class GetProvider extends AutoDisposeFutureProvider<Response> {
-  /// See also [get].
+  /// Get Request Api Client
+  ///
+  /// 共通となる[config]を利用し、host / pathを取得
+  /// [query]は、APIに応じて必要不必要が分かれるため、null許容としている
+  /// [token]は、GithubApi実施時に必要となる情報
+  ///
+  /// Copied from [get].
   GetProvider(
     ApiConfig<Query?> config, [
     Map<String, dynamic>? query,
@@ -185,6 +221,150 @@ class _GetProviderElement extends AutoDisposeFutureProviderElement<Response>
   Map<String, dynamic>? get query => (origin as GetProvider).query;
   @override
   String? get token => (origin as GetProvider).token;
+}
+
+String _$postHash() => r'd56d63d6022cece4366f0152f7cedc7fd0235cc9';
+
+/// See also [post].
+@ProviderFor(post)
+const postProvider = PostFamily();
+
+/// See also [post].
+class PostFamily extends Family<AsyncValue<Response>> {
+  /// See also [post].
+  const PostFamily();
+
+  /// See also [post].
+  PostProvider call(
+    ApiConfig<Query?> config, [
+    Map<String, dynamic>? query,
+  ]) {
+    return PostProvider(
+      config,
+      query,
+    );
+  }
+
+  @override
+  PostProvider getProviderOverride(
+    covariant PostProvider provider,
+  ) {
+    return call(
+      provider.config,
+      provider.query,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'postProvider';
+}
+
+/// See also [post].
+class PostProvider extends AutoDisposeFutureProvider<Response> {
+  /// See also [post].
+  PostProvider(
+    ApiConfig<Query?> config, [
+    Map<String, dynamic>? query,
+  ]) : this._internal(
+          (ref) => post(
+            ref as PostRef,
+            config,
+            query,
+          ),
+          from: postProvider,
+          name: r'postProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product') ? null : _$postHash,
+          dependencies: PostFamily._dependencies,
+          allTransitiveDependencies: PostFamily._allTransitiveDependencies,
+          config: config,
+          query: query,
+        );
+
+  PostProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.config,
+    required this.query,
+  }) : super.internal();
+
+  final ApiConfig<Query?> config;
+  final Map<String, dynamic>? query;
+
+  @override
+  Override overrideWith(
+    FutureOr<Response> Function(PostRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: PostProvider._internal(
+        (ref) => create(ref as PostRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        config: config,
+        query: query,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<Response> createElement() {
+    return _PostProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is PostProvider &&
+        other.config == config &&
+        other.query == query;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, config.hashCode);
+    hash = _SystemHash.combine(hash, query.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin PostRef on AutoDisposeFutureProviderRef<Response> {
+  /// The parameter `config` of this provider.
+  ApiConfig<Query?> get config;
+
+  /// The parameter `query` of this provider.
+  Map<String, dynamic>? get query;
+}
+
+class _PostProviderElement extends AutoDisposeFutureProviderElement<Response>
+    with PostRef {
+  _PostProviderElement(super.provider);
+
+  @override
+  ApiConfig<Query?> get config => (origin as PostProvider).config;
+  @override
+  Map<String, dynamic>? get query => (origin as PostProvider).query;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

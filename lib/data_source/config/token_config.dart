@@ -5,6 +5,7 @@ import 'package:yumemi_code_check/utils/env/env.dart';
 
 part 'generated/token_config.g.dart';
 
+/// Token取得Api用Configuration
 @Riverpod(keepAlive: true)
 TokenConfig tokenConfig(Ref ref) => TokenConfig();
 

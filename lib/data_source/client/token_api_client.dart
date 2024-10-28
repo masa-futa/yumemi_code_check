@@ -11,12 +11,13 @@ import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/token_api_client.g.dart';
 
+/// Token取得Api
 @riverpod
 Future<Result<String, ApiException>> getToken(Ref ref) async {
   final config = ref.read(tokenConfigProvider);
 
   try {
-    final response = await ref.read(getProvider(config).future);
+    final response = await ref.read(postProvider(config).future);
     if (response.statusCode > ApiClientConstant.successStatusCode) {
       final exception =
           ref.read(apiExceptionProvider(statucCode: response.statusCode));

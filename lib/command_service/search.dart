@@ -31,7 +31,7 @@ Future<Result<void, ApiException>> getSearchCommand(
       );
       return Success.noValue();
     }
-
+    // GithubApi実行時に必要となるTokenを取得
     final result = await ref.read(getTokenProvider.future);
     final token = switch (result) {
       Success(:final value) => value,

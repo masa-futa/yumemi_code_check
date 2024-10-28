@@ -18,7 +18,7 @@ void main() {
         final container = createContainer(
           overrides: [
             tokenConfigProvider.overrideWithValue(mockTokenConfig),
-            getProvider(
+            postProvider(
               mockTokenConfig,
             ).overrideWith(
               (_) => http.Response(
@@ -43,7 +43,7 @@ void main() {
         final container = createContainer(
           overrides: [
             tokenConfigProvider.overrideWithValue(mockTokenConfig),
-            getProvider(
+            postProvider(
               mockTokenConfig,
             ).overrideWith(
               (_) => http.Response(
@@ -65,7 +65,7 @@ void main() {
         final container = createContainer(
           overrides: [
             tokenConfigProvider.overrideWithValue(mockTokenConfig),
-            getProvider(
+            postProvider(
               mockTokenConfig,
             ).overrideWith(
                   (_) => http.Response(
@@ -87,7 +87,7 @@ void main() {
         final container = createContainer(
           overrides: [
             tokenConfigProvider.overrideWithValue(mockTokenConfig),
-            getProvider(
+            postProvider(
               mockTokenConfig,
             ).overrideWith(
                   (_) => http.Response(
