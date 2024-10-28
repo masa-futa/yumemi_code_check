@@ -21,7 +21,6 @@ class _SearchScreenTextFieldState extends ConsumerState<SearchComponentHeader> {
     ref.read(searchQueryProvider.notifier).search();
     final result = await ref
         .read(getSearchCommandProvider(keyword: controller.value.text).future);
-    // TODO(futami): ロジックを移譲できるか後ほど精査
     if (result case Failure(:final exception, :final stackTrace)) {
       ref.read(searchQueryProvider.notifier).exception(exception, stackTrace);
     }
