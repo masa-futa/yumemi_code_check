@@ -4,7 +4,8 @@ import 'package:yumemi_code_check/data_source/api_exception.dart';
 import 'package:yumemi_code_check/data_source/client/search_api_client.dart';
 import 'package:yumemi_code_check/data_source/client/token_api_client.dart';
 import 'package:yumemi_code_check/data_source/local_storage/local_storage_client.dart';
-import 'package:yumemi_code_check/query_service/search_query.dart';
+import 'package:yumemi_code_check/model/search_model.dart';
+import 'package:yumemi_code_check/query_service/query_service.dart';
 import 'package:yumemi_code_check/utils/result.dart';
 
 part 'generated/search.g.dart';
@@ -13,8 +14,8 @@ part 'generated/search.g.dart';
 Future<Result<void, ApiException>> getSearchCommand(
   Ref ref, {
   required String keyword,
+  required QueryService<SearchModel> queryService,
 }) async {
-  final queryService = ref.read(searchQueryProvider.notifier);
   try {
     // デバッグ機能が有効の場合は、ローカルデータを更新する
     if (await ref
@@ -24,7 +25,9 @@ Future<Result<void, ApiException>> getSearchCommand(
       // API通信を仮定して、Durationを2秒に設定
       await Future<void>.delayed(const Duration(seconds: 2));
       await ref.read(
-        getLocalSearchRepositoriesProvider(queryService: queryService).future,
+        getLocalSearchRepositoriesProvider(
+          queryService: queryService,
+        ).future,
       );
       return Success.noValue();
     }
@@ -39,7 +42,7 @@ Future<Result<void, ApiException>> getSearchCommand(
       getSearchRepositoriesProvider(
         token: token,
         keyword: keyword,
-        queryService: ref.read(searchQueryProvider.notifier),
+        queryService: queryService,
       ).future,
     );
     return Success.noValue();

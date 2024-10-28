@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yumemi_code_check/data_source/api_exception.dart';
+import 'package:yumemi_code_check/data_source/client/http_client.dart';
 import 'package:yumemi_code_check/data_source/config/search_config.dart';
 import 'package:yumemi_code_check/model/search_model.dart';
 import 'package:yumemi_code_check/query_service/query_service.dart';
@@ -23,9 +23,8 @@ Future<void> getSearchRepositories(
 }) async {
   final config = ref.read(searchConfigProvider);
   try {
-    final response = await http.get(
-      Uri.https(config.host, config.path, config.query?.get(keyword)),
-      headers: config.header(token),
+    final response = await ref.read(
+      getProvider(config, config.query!.get(keyword), token).future,
     );
 
     if (response.statusCode > ApiClientConstant.successStatusCode) {
@@ -47,8 +46,7 @@ Future<void> getLocalSearchRepositories(
   Ref ref, {
   required QueryService<SearchModel> queryService,
 }) async {
-  final jsonString =
-      await rootBundle.loadString(Assets.searchRepositories);
+  final jsonString = await rootBundle.loadString(Assets.searchRepositories);
   final decoded = json.decode(jsonString) as Map<String, dynamic>;
   final searchModel = SearchModel.fromJson(decoded);
   queryService.subscribe(Success(searchModel));

@@ -6,7 +6,7 @@ part of '../search.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getSearchCommandHash() => r'486d19544c2d0e45cb66631bb83723582cb2095d';
+String _$getSearchCommandHash() => r'ff0e2a97a447197339deaa1eecac0a7e2f9a5cb7';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -42,9 +42,11 @@ class GetSearchCommandFamily
   /// See also [getSearchCommand].
   GetSearchCommandProvider call({
     required String keyword,
+    required QueryService<SearchModel> queryService,
   }) {
     return GetSearchCommandProvider(
       keyword: keyword,
+      queryService: queryService,
     );
   }
 
@@ -54,6 +56,7 @@ class GetSearchCommandFamily
   ) {
     return call(
       keyword: provider.keyword,
+      queryService: provider.queryService,
     );
   }
 
@@ -78,10 +81,12 @@ class GetSearchCommandProvider
   /// See also [getSearchCommand].
   GetSearchCommandProvider({
     required String keyword,
+    required QueryService<SearchModel> queryService,
   }) : this._internal(
           (ref) => getSearchCommand(
             ref as GetSearchCommandRef,
             keyword: keyword,
+            queryService: queryService,
           ),
           from: getSearchCommandProvider,
           name: r'getSearchCommandProvider',
@@ -93,6 +98,7 @@ class GetSearchCommandProvider
           allTransitiveDependencies:
               GetSearchCommandFamily._allTransitiveDependencies,
           keyword: keyword,
+          queryService: queryService,
         );
 
   GetSearchCommandProvider._internal(
@@ -103,9 +109,11 @@ class GetSearchCommandProvider
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.keyword,
+    required this.queryService,
   }) : super.internal();
 
   final String keyword;
+  final QueryService<SearchModel> queryService;
 
   @override
   Override overrideWith(
@@ -122,6 +130,7 @@ class GetSearchCommandProvider
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         keyword: keyword,
+        queryService: queryService,
       ),
     );
   }
@@ -133,13 +142,16 @@ class GetSearchCommandProvider
 
   @override
   bool operator ==(Object other) {
-    return other is GetSearchCommandProvider && other.keyword == keyword;
+    return other is GetSearchCommandProvider &&
+        other.keyword == keyword &&
+        other.queryService == queryService;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, keyword.hashCode);
+    hash = _SystemHash.combine(hash, queryService.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -151,6 +163,9 @@ mixin GetSearchCommandRef
     on AutoDisposeFutureProviderRef<Result<void, ApiException>> {
   /// The parameter `keyword` of this provider.
   String get keyword;
+
+  /// The parameter `queryService` of this provider.
+  QueryService<SearchModel> get queryService;
 }
 
 class _GetSearchCommandProviderElement
@@ -160,6 +175,9 @@ class _GetSearchCommandProviderElement
 
   @override
   String get keyword => (origin as GetSearchCommandProvider).keyword;
+  @override
+  QueryService<SearchModel> get queryService =>
+      (origin as GetSearchCommandProvider).queryService;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

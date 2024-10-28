@@ -20,20 +20,20 @@ jobs:
 
       - name: Run analysis
         run: flutter analyze
-# TODO(futami): テスト導入時に追加
-#  test:
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 10
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v3
-#
-#      - name: Setup Flutter with FVM
-#        id: setup-flutter
-#        uses: kuhnroyal/flutter-fvm-config-action/setup@v3
-#
-#      - name: Install packages
-#        run: flutter pub get
-#
-#      - name: Run analysis
-#        run: flutter test --test-randomize-ordering-seed=random
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter with FVM
+        id: setup-flutter
+        uses: kuhnroyal/flutter-fvm-config-action/setup@v3
+
+      - name: Install packages
+        run: flutter pub get
+
+      - name: Run analysis
+        run: flutter test --test-randomize-ordering-seed=random
